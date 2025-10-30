@@ -21,7 +21,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="relative h-96 bg-card rounded-lg overflow-hidden">
-            <img src="/modern-event-stage-with-lighting.jpg" alt="Event showcase" className="w-full h-full object-cover" />
+            <img src="/hero.jpeg" alt="Event showcase" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>

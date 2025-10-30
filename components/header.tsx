@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -11,7 +12,7 @@ export default function Header() {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold text-accent">
-          SKYBLAZER
+          <Image src="/logo.jpg" alt="Skyblazer Logo" width={50} height={50} />
         </Link>
 
         {/* Desktop Menu */}
