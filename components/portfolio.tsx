@@ -2,32 +2,32 @@ const portfolioItems = [
   {
     title: "Tech Summit 2024",
     category: "Event Management",
-    image: "/tech-conference-stage.jpg",
+    image: "/img-1.jpeg",
   },
   {
     title: "Digital Trends Magazine",
     category: "Magazine Publishing",
-    image: "/magazine-cover.png",
+    image: "/img-2.jpeg",
   },
   {
     title: "Fashion Brand Campaign",
     category: "Advertising",
-    image: "/fashion-advertisement.png",
+    image: "/img-3.jpeg",
   },
   {
     title: "Corporate Gala Event",
     category: "Event Management",
-    image: "/elegant-corporate-event.jpg",
+    image: "/video.mp4",
   },
   {
     title: "Lifestyle Publication",
     category: "Magazine Publishing",
-    image: "/lifestyle-magazine.jpg",
+    image: "/img-5.jpeg",
   },
   {
     title: "Product Launch Campaign",
     category: "Promotion",
-    image: "/product-launch-event.png",
+    image: "/img-6.jpeg",
   },
 ]
 
@@ -45,15 +45,25 @@ export default function Portfolio() {
         <div className="grid md:grid-cols-3 gap-6">
           {portfolioItems.map((item, index) => (
             <div key={index} className="group relative overflow-hidden rounded-lg h-64 cursor-pointer">
-              <img
-                src={item.image || "/placeholder.svg"}
-                alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
-              />
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition flex flex-col justify-end p-6">
-                <p className="text-accent text-sm font-semibold mb-2">{item.category}</p>
-                <h3 className="text-xl font-bold text-foreground">{item.title}</h3>
-              </div>
+              {item.image.endsWith('.mp4') ? (
+                <video
+                  src={item.image}
+                  controls
+                  autoPlay
+                  loop
+                  muted
+                  className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <img
+                  src={item.image || "/placeholder.svg"}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+                />
+              )}
+              
             </div>
           ))}
         </div>
